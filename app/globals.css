@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+/*
+  ─────────────────────────────────────────────────────────────────────────
+  Eduardo Gomes Advocacia — sistema visual
+  Paleta oficial (Manual de Identidade Visual + Manual do Logotipo):
+    Azul Marinho  #0E1A3A  — fundo principal, autoridade
+    Ouro Bronze   #C9A24A  — monograma e destaques (ouro do logo)
+                  #B8893B  — ouro do manual de marca (variante profunda)
+    Branco Marfim #F6F1E5  — textos sobre fundo escuro
+    Cinza Carbono #4D5060  — apoio, divisórias
+  Design dark-first e fixo (sem alternador de tema) — identidade institucional.
+  ─────────────────────────────────────────────────────────────────────────
+*/
+
+:root {
+  /* --- cores base da marca --- */
+  --marinho: #0e1a3a;
+  --marinho-900: #070f24; /* "versão solene", faixas mais profundas */
+  --marinho-800: #0a1430;
+  --marinho-700: #16264a; /* superfícies elevadas / cards */
+  --marinho-600: #1f3160; /* bordas sobre escuro */
+  --ouro: #c9a24a;
+  --ouro-deep: #b8893b;
+  --ouro-soft: #ddc078; /* champagne — hover */
+  --marfim: #f6f1e5;
+  --carbono: #4d5060;
+
+  /* --- tokens semânticos (contexto escuro, padrão) --- */
+  --bg-0: var(--marinho);
+  --bg-1: var(--marinho-900);
+  --bg-2: var(--marinho-700);
+  --border: rgba(246, 241, 229, 0.12);
+  --border-strong: rgba(246, 241, 229, 0.22);
+
+  --text-1: var(--marfim);
+  --text-2: rgba(246, 241, 229, 0.72);
+  --text-3: rgba(246, 241, 229, 0.5);
+
+  --accent: var(--ouro);
+  --accent-strong: var(--ouro-soft);
+  --accent-fg: var(--marinho);
+
+  --cta: var(--ouro);
+  --cta-h: var(--ouro-soft);
+  --cta-fg: #1b1305;
+
+  --radius-s: 0.5rem;
+  --radius-m: 0.875rem;
+  --radius-l: 1.5rem;
+  --radius-full: 999px;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.45);
+}
+
+/* Faixa clara ("respiro") — inverte o contexto de cor dentro da seção. */
+[data-tone="marfim"] {
+  --bg-0: var(--marfim);
+  --bg-1: #efe8d6;
+  --bg-2: #ffffff;
+  --border: rgba(14, 26, 58, 0.12);
+  --border-strong: rgba(14, 26, 58, 0.24);
+  --text-1: var(--marinho);
+  --text-2: #4a4f63;
+  --text-3: #6b7085;
+  --accent: var(--ouro-deep);
+  --accent-strong: var(--ouro-deep);
+}
+
+@theme inline {
+  --color-bg-0: var(--bg-0);
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+
+  --color-marinho: var(--marinho);
+  --color-marinho-900: var(--marinho-900);
+  --color-marinho-700: var(--marinho-700);
+  --color-marfim: var(--marfim);
+  --color-ouro: var(--ouro);
+  --color-ouro-deep: var(--ouro-deep);
+  --color-ouro-soft: var(--ouro-soft);
+  --color-carbono: var(--carbono);
+
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-fg: var(--accent-fg);
+  --color-cta: var(--cta);
+  --color-cta-h: var(--cta-h);
+  --color-cta-fg: var(--cta-fg);
+
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* escala tipográfica fluida (clamp), teto ~1.5x do mínimo */
+  --text-2xl: clamp(1.375rem, 1.25rem + 0.55vw, 1.75rem);
+  --text-3xl: clamp(1.6rem, 1.4rem + 0.9vw, 2.25rem);
+  --text-4xl: clamp(1.95rem, 1.6rem + 1.5vw, 3rem);
+  --text-5xl: clamp(2.4rem, 1.9rem + 2.3vw, 3.9rem);
+  --text-6xl: clamp(2.9rem, 2.1rem + 3.4vw, 4.9rem);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--bg-0);
+    color: var(--text-1);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    min-height: 100dvh;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--text-1);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+/* Palavra-chave em destaque dentro dos títulos display (itálico dourado). */
+.accent-word {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* "Régua" dourada curta usada como eyebrow / separador. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-step-in {
+  animation: step-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}
