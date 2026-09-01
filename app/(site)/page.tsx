@@ -13,7 +13,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight } from "@/components/icons";
 import { faqPageSchema } from "@/lib/structured-data";
 import { STATS, FIRM } from "@/lib/site";
-import eduardoHero from "@/public/brand/eduardo-hero.jpg";
+import eduardoCutout from "@/public/brand/eduardo-hero-cutout.webp";
+import monogram from "@/public/brand/monogram-ouro.png";
 import type { FaqItem } from "@/lib/faq";
 
 export const metadata: Metadata = {
@@ -65,63 +66,82 @@ export default function HomePage() {
       <JsonLd data={faqPageSchema(faq)} />
 
       {/* HERO */}
-      <Section tone="navy" pad="hero" className="relative overflow-hidden">
+      <section className="relative isolate overflow-hidden bg-[#0a1430]">
+        {/* atmosfera */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+          className="absolute inset-0 -z-20 bg-gradient-to-b from-[#0a1430] via-[#0e1a3a] to-[#0a1430]"
         />
-        <Container className="relative">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_23rem] lg:gap-16">
-            <div className="max-w-2xl">
-              <Reveal>
-                <p className="eyebrow">Advocacia Previdenciária e Trabalhista</p>
-              </Reveal>
-              <Reveal delayMs={60}>
-                <h1 className="mt-6 text-5xl md:text-6xl">
-                  Antes de tomar uma decisão,{" "}
-                  <span className="accent-word">conheça seus direitos.</span>
-                </h1>
-              </Reveal>
-              <Reveal delayMs={120}>
-                <p className="mt-6 font-sans text-lg leading-relaxed text-text-2">
-                  Conte sua situação e receba orientação jurídica especializada
-                  em Direito Previdenciário e Trabalhista, com a transparência de
-                  quem prioriza o seu direito.
-                </p>
-              </Reveal>
-              <Reveal delayMs={180}>
-                <div className="mt-9">
-                  <WhatsAppCta />
-                </div>
-              </Reveal>
-              <Reveal delayMs={240}>
-                <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-text-3">
-                  <li>Mais de {FIRM.experienceYears} anos de atuação</li>
-                  <li aria-hidden>·</li>
-                  <li>
-                    Sede em {FIRM.city}/{FIRM.state}
-                  </li>
-                  <li aria-hidden>·</li>
-                  <li>Atendimento online para todo o Brasil</li>
-                </ul>
-              </Reveal>
-            </div>
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-[radial-gradient(115%_75%_at_74%_10%,rgba(201,162,74,0.13),transparent_58%)]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+        />
 
-            <Reveal
-              delayMs={140}
-              className="relative mx-auto w-full max-w-[19rem] lg:max-w-none"
-            >
-              <Image
-                src={eduardoHero}
-                alt={`${FIRM.lawyer}, advogado responsável pelo escritório`}
-                priority
-                sizes="(max-width: 1024px) 19rem, 23rem"
-                className="h-auto w-full rounded-[var(--radius-l)] lg:rounded-none lg:[mask-image:linear-gradient(to_right,transparent,#000_18%)]"
-              />
+        {/* monograma — símbolo da marca, em escala, ao fundo */}
+        <Image
+          src={monogram}
+          alt=""
+          aria-hidden
+          priority
+          className="pointer-events-none absolute left-1/2 top-1/2 -z-10 w-[38rem] max-w-none -translate-x-[70%] -translate-y-1/2 opacity-[0.06] blur-[0.5px] sm:w-[46rem]"
+        />
+
+        {/* Dr. Eduardo, sangrando à direita */}
+        <Image
+          src={eduardoCutout}
+          alt={FIRM.lawyer}
+          priority
+          sizes="(max-width: 1024px) 92vw, 55vw"
+          className="pointer-events-none absolute bottom-0 right-0 -z-10 h-[82%] w-auto max-w-none object-contain object-bottom opacity-45 drop-shadow-[0_0_70px_rgba(201,162,74,0.16)] [mask-image:linear-gradient(to_bottom,#000_72%,transparent)] sm:h-[92%] sm:opacity-70 lg:h-[106%] lg:opacity-100 lg:[mask-image:linear-gradient(to_right,transparent,#000_12%)]"
+        />
+
+        {/* scrim para legibilidade */}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0a1430] via-[#0a1430]/80 to-transparent lg:from-[#0a1430]/95 lg:via-[#0a1430]/30 lg:to-transparent"
+        />
+
+        <div className="mx-auto flex min-h-[clamp(34rem,74vh,45rem)] w-full max-w-6xl flex-col justify-center px-5 py-20 sm:px-6 lg:px-8">
+          <div className="max-w-xl">
+            <Reveal>
+              <p className="eyebrow">Advocacia Previdenciária e Trabalhista</p>
+            </Reveal>
+            <Reveal delayMs={60}>
+              <h1 className="mt-6 text-5xl md:text-6xl">
+                Antes de tomar uma decisão,{" "}
+                <span className="accent-word">conheça seus direitos.</span>
+              </h1>
+            </Reveal>
+            <Reveal delayMs={120}>
+              <p className="mt-6 font-sans text-lg leading-relaxed text-text-2">
+                Conte sua situação e receba orientação jurídica especializada em
+                Direito Previdenciário e Trabalhista, com a transparência de quem
+                prioriza o seu direito.
+              </p>
+            </Reveal>
+            <Reveal delayMs={180}>
+              <div className="mt-9">
+                <WhatsAppCta />
+              </div>
+            </Reveal>
+            <Reveal delayMs={240}>
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-text-3">
+                <li>Mais de {FIRM.experienceYears} anos de atuação</li>
+                <li aria-hidden>·</li>
+                <li>
+                  Sede em {FIRM.city}/{FIRM.state}
+                </li>
+                <li aria-hidden>·</li>
+                <li>Atendimento online para todo o Brasil</li>
+              </ul>
             </Reveal>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
       {/* ÁREAS */}
       <Section tone="deep" id="areas">
