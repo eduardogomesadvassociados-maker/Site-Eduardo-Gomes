@@ -76,7 +76,13 @@ export default function TrabalhistaPage() {
 
       <PageHero
         eyebrow="Direito Trabalhista"
-        title="Está com um problema no trabalho e não sabe se seus direitos foram respeitados?"
+        title={
+          <>
+            Está com um <span className="accent-word">problema no trabalho</span>{" "}
+            e não sabe se seus{" "}
+            <span className="accent-word">direitos</span> foram respeitados?
+          </>
+        }
         intro="Se você passou por problemas com sua jornada, rescisão, funções exercidas ou outras situações no ambiente de trabalho, conte o que aconteceu para receber uma orientação jurídica adequada ao seu caso."
       />
 

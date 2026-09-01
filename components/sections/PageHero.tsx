@@ -12,7 +12,8 @@ export function PageHero({
   children,
 }: {
   eyebrow: string;
-  title: string;
+  /** String simples ou trecho JSX com <span className="accent-word"> nos destaques. */
+  title: ReactNode;
   accentWord?: string;
   intro?: ReactNode;
   tag?: string;

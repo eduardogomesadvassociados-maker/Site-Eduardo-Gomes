@@ -112,7 +112,14 @@ export default function PrevidenciarioPage() {
 
       <PageHero
         eyebrow="Direito Previdenciário"
-        title="Precisa de orientação sobre aposentadoria ou algum benefício do INSS?"
+        title={
+          <>
+            Precisa de orientação sobre{" "}
+            <span className="accent-word">
+              aposentadoria ou algum benefício do INSS?
+            </span>
+          </>
+        }
         intro={
           <>
             Converse com um advogado e entenda quais caminhos podem existir para
@@ -121,7 +128,6 @@ export default function PrevidenciarioPage() {
             particularidades do seu caso.
           </>
         }
-        tag="Atendimento previdenciário no Rio de Janeiro"
       />
 
       {/* SITUAÇÕES */}
