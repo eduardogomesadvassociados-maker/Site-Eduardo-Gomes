@@ -125,6 +125,33 @@ export function breadcrumbSchema(
   };
 }
 
+export function personSchema(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/sobre#dr-eduardo`,
+    name: FIRM.lawyer,
+    jobTitle: "Advogado",
+    identifier: FIRM.oab,
+    worksFor: { "@id": `${SITE_URL}/#escritorio` },
+    knowsAbout: [
+      "Direito Previdenciário",
+      "Direito Trabalhista",
+      "Aposentadoria especial",
+      "Previdência internacional",
+      "Rescisão indireta",
+    ],
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Inscrição na Ordem dos Advogados do Brasil",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "Ordem dos Advogados do Brasil — Seccional Rio de Janeiro",
+      },
+    },
+  };
+}
+
 export function serviceSchema(opts: {
   name: string;
   description: string;
