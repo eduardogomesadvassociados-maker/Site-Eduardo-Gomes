@@ -10,12 +10,14 @@ import { FIRM, STATS } from "@/lib/site";
 export function SobreEscritorio({
   processos = STATS.processosTotal,
   withStats = true,
+  tone = "deep",
 }: {
   processos?: number;
   withStats?: boolean;
+  tone?: "navy" | "deep";
 }) {
   return (
-    <Section tone="navy" id="escritorio">
+    <Section tone={tone} id="escritorio">
       <Container className="max-w-3xl">
         <Reveal>
           <p className="eyebrow">Sobre o escritório</p>
