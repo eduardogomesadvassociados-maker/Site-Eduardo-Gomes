@@ -1,7 +1,12 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, SITE_INDEXABLE } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
+  // Enquanto o site vive só na URL .vercel.app, bloqueia tudo.
+  if (!SITE_INDEXABLE) {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
+
   return {
     rules: [
       { userAgent: "*", allow: "/" },

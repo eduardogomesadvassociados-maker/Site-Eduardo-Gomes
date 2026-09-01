@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   description:
     "Como o site Eduardo Gomes Advogados trata dados de navegação, cookies e informações compartilhadas por meio dos canais de contato.",
   alternates: { canonical: "/politica-de-privacidade" },
-  robots: { index: true, follow: true },
 };
 
 // TODO (Fase 5): revisão jurídica final do texto (LGPD) com o cliente.

@@ -7,6 +7,14 @@
 
 export const SITE_URL = "https://eduardogomesadvogados.com.br";
 
+/**
+ * Vira `true` quando o domínio definitivo estiver apontado para este deploy.
+ * Enquanto o site vive só numa URL `.vercel.app` (e o cliente tem um site no ar),
+ * mantemos tudo fora dos buscadores para não gerar conteúdo duplicado.
+ * Ao ativar: trocar também o SITE_URL acima pelo domínio real.
+ */
+export const SITE_INDEXABLE = false;
+
 export const FIRM = {
   legalName: "Eduardo Gomes Sociedade Individual de Advocacia",
   shortName: "Eduardo Gomes Advogados",

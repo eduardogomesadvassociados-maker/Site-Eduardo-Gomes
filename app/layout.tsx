@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_URL, FIRM } from "@/lib/site";
+import { SITE_URL, SITE_INDEXABLE, FIRM } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -42,11 +42,13 @@ export const metadata: Metadata = {
     ],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
-  },
+  robots: SITE_INDEXABLE
+    ? {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true, "max-image-preview": "large" },
+      }
+    : { index: false, follow: false, nocache: true },
   alternates: { canonical: "/" },
   category: "Advocacia",
 };
