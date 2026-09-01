@@ -96,7 +96,7 @@ export default function HomePage() {
           alt={FIRM.lawyer}
           priority
           sizes="(max-width: 1024px) 92vw, 55vw"
-          className="pointer-events-none absolute bottom-0 right-0 -z-10 h-[82%] w-auto max-w-none object-contain object-bottom opacity-45 drop-shadow-[0_0_70px_rgba(201,162,74,0.16)] [mask-image:linear-gradient(to_bottom,#000_72%,transparent)] sm:h-[92%] sm:opacity-70 lg:top-0 lg:bottom-auto lg:h-[106%] lg:object-top lg:opacity-100 lg:[mask-image:linear-gradient(to_right,transparent,#000_12%)]"
+          className="pointer-events-none absolute bottom-0 right-0 -z-10 hidden h-[92%] w-auto max-w-none object-contain object-bottom opacity-70 drop-shadow-[0_0_70px_rgba(201,162,74,0.16)] [mask-image:linear-gradient(to_bottom,#000_72%,transparent)] sm:block lg:top-0 lg:bottom-auto lg:h-[106%] lg:object-top lg:opacity-100 lg:[mask-image:linear-gradient(to_right,transparent,#000_12%)]"
         />
 
         {/* scrim para legibilidade */}
