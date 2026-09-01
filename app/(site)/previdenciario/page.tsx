@@ -190,10 +190,10 @@ export default function PrevidenciarioPage() {
 
       <Testimonials />
 
-      <SobreEscritorio processos={STATS.processosPrevidenciario} />
+      <SobreEscritorio processos={STATS.processosPrevidenciario} tone="deep" />
 
       {/* FAQ */}
-      <Section tone="deep" id="faq">
+      <Section tone="navy" id="faq">
         <Container className="max-w-3xl">
           <Reveal>
             <h2 className="text-4xl">
@@ -207,7 +207,7 @@ export default function PrevidenciarioPage() {
       </Section>
 
       {/* CTA FINAL */}
-      <Section tone="navy" pad="lg">
+      <Section tone="deep" pad="lg">
         <Container className="flex flex-col items-center text-center">
           <Reveal>
             <h2 className="max-w-2xl text-4xl md:text-5xl">
