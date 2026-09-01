@@ -49,7 +49,17 @@ export function legalServiceSchema(): Record<string, unknown> {
       "@type": "Person",
       name: FIRM.lawyer,
       jobTitle: "Advogado",
-      description: "Advogado com mais de 18 anos de experiência em Direito Previdenciário e Trabalhista.",
+      description:
+        "Advogado com mais de 18 anos de experiência em Direito Previdenciário e Trabalhista.",
+      identifier: FIRM.oab,
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Inscrição na Ordem dos Advogados do Brasil",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Ordem dos Advogados do Brasil — Seccional Rio de Janeiro",
+        },
+      },
     },
   };
 }

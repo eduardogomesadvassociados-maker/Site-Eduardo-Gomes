@@ -1,7 +1,8 @@
 /**
  * Constantes do site Eduardo Gomes Advocacia.
  *
- * NOTA: SITE_URL e OAB ainda a confirmar com o cliente (ver memória do projeto).
+ * NOTA: SITE_URL (domínio) ainda a confirmar com o cliente e o endereço
+ * completo do escritório — ver memória do projeto.
  */
 
 export const SITE_URL = "https://eduardogomesadvogados.com.br";
@@ -10,7 +11,7 @@ export const FIRM = {
   legalName: "Eduardo Gomes Sociedade Individual de Advocacia",
   shortName: "Eduardo Gomes Advogados",
   lawyer: "Dr. Eduardo da Silva Gomes",
-  oab: "OAB/RJ", // nº a confirmar
+  oab: "OAB/RJ 146.846",
   since: 2008,
   experienceYears: new Date().getFullYear() - 2008 >= 18 ? 18 : 18, // "mais de 18 anos"
   hours: "Segunda a sexta, das 9h às 18h",

@@ -32,9 +32,23 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: FIRM.shortName,
     url: SITE_URL,
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${FIRM.shortName} — Direito Previdenciário e Trabalhista`,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  alternates: { canonical: "/" },
+  category: "Advocacia",
 };
 
 export const viewport: Viewport = {
