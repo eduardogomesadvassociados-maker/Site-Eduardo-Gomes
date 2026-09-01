@@ -13,7 +13,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight } from "@/components/icons";
 import { faqPageSchema } from "@/lib/structured-data";
 import { STATS, FIRM } from "@/lib/site";
-import monogram from "@/public/brand/monogram-ouro.png";
+import eduardoHero from "@/public/brand/eduardo-hero.jpg";
 import type { FaqItem } from "@/lib/faq";
 
 export const metadata: Metadata = {
@@ -70,44 +70,56 @@ export default function HomePage() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
         />
-        <Image
-          src={monogram}
-          alt=""
-          aria-hidden
-          priority
-          className="pointer-events-none absolute -right-16 top-1/2 hidden w-[38rem] max-w-none -translate-y-1/2 opacity-[0.04] lg:block"
-        />
-        <Container className="relative max-w-4xl">
-          <Reveal>
-            <p className="eyebrow">Advocacia Previdenciária e Trabalhista</p>
-          </Reveal>
-          <Reveal delayMs={60}>
-            <h1 className="mt-6 text-5xl md:text-6xl">
-              Antes de tomar uma decisão,{" "}
-              <span className="accent-word">conheça seus direitos.</span>
-            </h1>
-          </Reveal>
-          <Reveal delayMs={120}>
-            <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-text-2">
-              Conte sua situação e receba orientação jurídica especializada em
-              Direito Previdenciário e Trabalhista, com a transparência de quem
-              prioriza o seu direito.
-            </p>
-          </Reveal>
-          <Reveal delayMs={180}>
-            <div className="mt-9">
-              <WhatsAppCta />
+        <Container className="relative">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_23rem] lg:gap-16">
+            <div className="max-w-2xl">
+              <Reveal>
+                <p className="eyebrow">Advocacia Previdenciária e Trabalhista</p>
+              </Reveal>
+              <Reveal delayMs={60}>
+                <h1 className="mt-6 text-5xl md:text-6xl">
+                  Antes de tomar uma decisão,{" "}
+                  <span className="accent-word">conheça seus direitos.</span>
+                </h1>
+              </Reveal>
+              <Reveal delayMs={120}>
+                <p className="mt-6 font-sans text-lg leading-relaxed text-text-2">
+                  Conte sua situação e receba orientação jurídica especializada
+                  em Direito Previdenciário e Trabalhista, com a transparência de
+                  quem prioriza o seu direito.
+                </p>
+              </Reveal>
+              <Reveal delayMs={180}>
+                <div className="mt-9">
+                  <WhatsAppCta />
+                </div>
+              </Reveal>
+              <Reveal delayMs={240}>
+                <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-text-3">
+                  <li>Mais de {FIRM.experienceYears} anos de atuação</li>
+                  <li aria-hidden>·</li>
+                  <li>
+                    Sede em {FIRM.city}/{FIRM.state}
+                  </li>
+                  <li aria-hidden>·</li>
+                  <li>Atendimento online para todo o Brasil</li>
+                </ul>
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal delayMs={240}>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-text-3">
-              <li>Mais de {FIRM.experienceYears} anos de atuação</li>
-              <li aria-hidden>·</li>
-              <li>Sede em {FIRM.city}/{FIRM.state}</li>
-              <li aria-hidden>·</li>
-              <li>Atendimento online para todo o Brasil</li>
-            </ul>
-          </Reveal>
+
+            <Reveal
+              delayMs={140}
+              className="relative mx-auto w-full max-w-[19rem] lg:max-w-none"
+            >
+              <Image
+                src={eduardoHero}
+                alt={`${FIRM.lawyer}, advogado responsável pelo escritório`}
+                priority
+                sizes="(max-width: 1024px) 19rem, 23rem"
+                className="h-auto w-full rounded-[var(--radius-l)] lg:rounded-none lg:[mask-image:linear-gradient(to_right,transparent,#000_18%)]"
+              />
+            </Reveal>
+          </div>
         </Container>
       </Section>
 
@@ -164,9 +176,12 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* DEPOIMENTOS */}
+      <Testimonials tone="navy" />
+
       {/* POR QUE BUSCAR ORIENTAÇÃO */}
       <ArgumentBlock
-        tone="navy"
+        tone="deep"
         eyebrow="Por que buscar orientação jurídica?"
         title="Antes de tomar uma decisão, entenda as possibilidades do"
         accentWord="seu caso"
@@ -177,7 +192,7 @@ export default function HomePage() {
       />
 
       {/* COMO FUNCIONA */}
-      <Section tone="deep" id="atendimento">
+      <Section tone="navy" id="atendimento">
         <Container>
           <Reveal>
             <h2 className="text-4xl">
@@ -194,12 +209,10 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Testimonials />
-
-      <SobreEscritorio processos={STATS.processosTotal} tone="navy" />
+      <SobreEscritorio processos={STATS.processosTotal} tone="deep" />
 
       {/* FAQ */}
-      <Section tone="deep" id="faq">
+      <Section tone="navy" id="faq">
         <Container className="max-w-3xl">
           <Reveal>
             <h2 className="text-4xl">Perguntas frequentes</h2>
@@ -211,7 +224,7 @@ export default function HomePage() {
       </Section>
 
       {/* CTA FINAL */}
-      <Section tone="navy" pad="lg">
+      <Section tone="deep" pad="lg">
         <Container className="flex flex-col items-center text-center">
           <Reveal>
             <h2 className="max-w-2xl text-4xl md:text-5xl">
