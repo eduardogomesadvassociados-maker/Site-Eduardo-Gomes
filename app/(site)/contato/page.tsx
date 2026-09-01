@@ -10,7 +10,7 @@ import { CONTACT, FIRM } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contato",
   description:
-    "Fale com o escritório Eduardo Gomes Advogados pelo WhatsApp. Atendimento online para todo o Brasil, de segunda a sexta, das 9h às 18h.",
+    "Fale com o escritório Eduardo Gomes Advogados pelo WhatsApp. Atendimento online para todo o Brasil, de segunda a sexta, das 8h às 17h.",
   alternates: { canonical: "/contato" },
 };
 

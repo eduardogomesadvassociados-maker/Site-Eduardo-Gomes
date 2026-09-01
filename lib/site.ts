@@ -1,8 +1,7 @@
 /**
  * Constantes do site Eduardo Gomes Advocacia.
  *
- * NOTA: SITE_URL (domínio) ainda a confirmar com o cliente. Horário conforme
- * briefing (9h–18h); o Google Meu Negócio mostra abertura às 8h — confirmar.
+ * NOTA: SITE_URL (domínio) ainda a confirmar com o cliente.
  */
 
 export const SITE_URL = "https://eduardogomesadvogados.com.br";
@@ -22,7 +21,7 @@ export const FIRM = {
   oab: "OAB/RJ 146.846",
   since: 2008,
   experienceYears: new Date().getFullYear() - 2008 >= 18 ? 18 : 18, // "mais de 18 anos"
-  hours: "Segunda a sexta, das 9h às 18h",
+  hours: "Segunda a sexta, das 8h às 17h",
   address: {
     building: "Edifício Lumina Corporate",
     street: "R. Cel. Bernardino de Melo, 2201 — Sala 1110",
