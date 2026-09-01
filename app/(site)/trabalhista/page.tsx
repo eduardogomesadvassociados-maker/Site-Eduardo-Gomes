@@ -121,8 +121,11 @@ export default function TrabalhistaPage() {
         </Container>
       </Section>
 
+      {/* DEPOIMENTOS */}
+      <Testimonials tone="deep" />
+
       {/* COMO FUNCIONA */}
-      <Section tone="deep" id="atendimento">
+      <Section tone="navy" id="atendimento">
         <Container>
           <Reveal>
             <h2 className="text-4xl">
@@ -140,7 +143,7 @@ export default function TrabalhistaPage() {
 
       {/* POR QUE BUSCAR ORIENTAÇÃO ANTES DE DECIDIR */}
       <ArgumentBlock
-        tone="navy"
+        tone="deep"
         eyebrow="Por que buscar orientação antes de tomar uma decisão?"
         title="Uma decisão tomada sem informação pode ter"
         accentWord="consequências"
@@ -150,12 +153,10 @@ export default function TrabalhistaPage() {
         ]}
       />
 
-      <Testimonials />
-
-      <SobreEscritorio processos={STATS.processosTrabalhista} tone="deep" />
+      <SobreEscritorio processos={STATS.processosTrabalhista} tone="navy" />
 
       {/* CTA FINAL */}
-      <Section tone="navy" pad="lg">
+      <Section tone="deep" pad="lg">
         <Container className="flex flex-col items-center text-center">
           <Reveal>
             <h2 className="max-w-2xl text-4xl md:text-5xl">

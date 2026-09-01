@@ -176,9 +176,12 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* DEPOIMENTOS */}
+      <Testimonials tone="navy" />
+
       {/* POR QUE BUSCAR ORIENTAÇÃO */}
       <ArgumentBlock
-        tone="navy"
+        tone="deep"
         eyebrow="Por que buscar orientação jurídica?"
         title="Antes de tomar uma decisão, entenda as possibilidades do"
         accentWord="seu caso"
@@ -189,7 +192,7 @@ export default function HomePage() {
       />
 
       {/* COMO FUNCIONA */}
-      <Section tone="deep" id="atendimento">
+      <Section tone="navy" id="atendimento">
         <Container>
           <Reveal>
             <h2 className="text-4xl">
@@ -206,12 +209,10 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Testimonials />
-
-      <SobreEscritorio processos={STATS.processosTotal} tone="navy" />
+      <SobreEscritorio processos={STATS.processosTotal} tone="deep" />
 
       {/* FAQ */}
-      <Section tone="deep" id="faq">
+      <Section tone="navy" id="faq">
         <Container className="max-w-3xl">
           <Reveal>
             <h2 className="text-4xl">Perguntas frequentes</h2>
@@ -223,7 +224,7 @@ export default function HomePage() {
       </Section>
 
       {/* CTA FINAL */}
-      <Section tone="navy" pad="lg">
+      <Section tone="deep" pad="lg">
         <Container className="flex flex-col items-center text-center">
           <Reveal>
             <h2 className="max-w-2xl text-4xl md:text-5xl">

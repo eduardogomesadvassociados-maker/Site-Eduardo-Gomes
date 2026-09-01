@@ -1,8 +1,8 @@
 /**
  * Constantes do site Eduardo Gomes Advocacia.
  *
- * NOTA: SITE_URL (domínio) ainda a confirmar com o cliente e o endereço
- * completo do escritório — ver memória do projeto.
+ * NOTA: SITE_URL (domínio) ainda a confirmar com o cliente. Horário conforme
+ * briefing (9h–18h); o Google Meu Negócio mostra abertura às 8h — confirmar.
  */
 
 export const SITE_URL = "https://eduardogomesadvogados.com.br";
@@ -23,6 +23,15 @@ export const FIRM = {
   since: 2008,
   experienceYears: new Date().getFullYear() - 2008 >= 18 ? 18 : 18, // "mais de 18 anos"
   hours: "Segunda a sexta, das 9h às 18h",
+  address: {
+    building: "Edifício Lumina Corporate",
+    street: "R. Cel. Bernardino de Melo, 2201 — Sala 1110",
+    district: "Centro",
+    city: "Nova Iguaçu",
+    state: "RJ",
+    postalCode: "26255-140",
+    mapsUrl: "https://maps.google.com/?q=Eduardo+Gomes+Advogado,+Nova+Igua%C3%A7u+-+RJ",
+  },
   city: "Nova Iguaçu",
   state: "RJ",
   region: "Baixada Fluminense e Região Metropolitana do Rio de Janeiro",
@@ -47,8 +56,7 @@ export const STATS = {
 
 export const CONTACT = {
   whatsappNumber: "552126674120",
-  whatsappUrl:
-    "https://api.whatsapp.com/send/?phone=552126674120&text&type=phone_number&app_absent=0&",
+  whatsappUrl: "https://wa.me/552126674120",
   phoneDisplay: "(21) 2667-4120",
   phoneE164: "+552126674120",
   instagram: "https://www.instagram.com/eduardogomesadvogado/",

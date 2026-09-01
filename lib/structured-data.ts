@@ -1,4 +1,5 @@
 import { SITE_URL, FIRM, CONTACT } from "@/lib/site";
+import { TESTIMONIALS, GOOGLE_RATING } from "@/lib/testimonials";
 import type { FaqItem } from "@/lib/faq";
 
 /** Entidade principal do escritório — referenciada por @id nas demais. */
@@ -34,16 +35,37 @@ export function legalServiceSchema(): Record<string, unknown> {
     ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: `${FIRM.address.street}, ${FIRM.address.district}`,
       addressLocality: FIRM.city,
       addressRegion: FIRM.state,
+      postalCode: FIRM.address.postalCode,
       addressCountry: "BR",
     },
+    hasMap: FIRM.address.mapsUrl,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "09:00",
       closes: "18:00",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: GOOGLE_RATING.value,
+      reviewCount: GOOGLE_RATING.count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: TESTIMONIALS.map((t) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: t.name },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: t.rating,
+        bestRating: 5,
+      },
+      reviewBody: t.text,
+      publisher: { "@type": "Organization", name: t.source ?? "Google" },
+    })),
     sameAs: [CONTACT.instagram],
     founder: {
       "@type": "Person",

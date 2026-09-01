@@ -63,7 +63,13 @@ export function Footer() {
           </p>
           <p className="flex items-start gap-2.5 font-sans text-sm text-text-2">
             <MapPin width={16} height={16} className="mt-0.5 shrink-0 text-accent" />
-            {FIRM.city}/{FIRM.state} — atendimento online para todo o Brasil
+            <span>
+              {FIRM.address.street}
+              <br />
+              {FIRM.address.district}, {FIRM.city}/{FIRM.state}
+              <br />
+              Atendimento online para todo o Brasil
+            </span>
           </p>
           <p className="flex items-start gap-2.5 font-sans text-sm text-text-2">
             <Clock width={16} height={16} className="mt-0.5 shrink-0 text-accent" />
@@ -77,6 +83,15 @@ export function Footer() {
           >
             <WhatsAppIcon width={16} height={16} />
             {CONTACT.phoneDisplay}
+          </a>
+          <a
+            href={CONTACT.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent hover:text-accent-strong"
+          >
+            <InstagramIcon width={16} height={16} />
+            {CONTACT.instagramHandle}
           </a>
         </div>
       </Container>

@@ -165,9 +165,12 @@ export default function PrevidenciarioPage() {
         </Container>
       </Section>
 
+      {/* DEPOIMENTOS */}
+      <Testimonials tone="deep" />
+
       {/* ENTENDA SUA SITUAÇÃO */}
       <ArgumentBlock
-        tone="deep"
+        tone="navy"
         eyebrow="Entenda sua situação previdenciária"
         title="Cada histórico de contribuição pode levar a uma análise"
         accentWord="diferente"
@@ -178,7 +181,7 @@ export default function PrevidenciarioPage() {
       />
 
       {/* COMO FUNCIONA */}
-      <Section tone="navy" id="atendimento">
+      <Section tone="deep" id="atendimento">
         <Container>
           <Reveal>
             <h2 className="text-4xl">
@@ -194,12 +197,10 @@ export default function PrevidenciarioPage() {
         </Container>
       </Section>
 
-      <Testimonials />
-
-      <SobreEscritorio processos={STATS.processosPrevidenciario} tone="deep" />
+      <SobreEscritorio processos={STATS.processosPrevidenciario} tone="navy" />
 
       {/* FAQ */}
-      <Section tone="navy" id="faq">
+      <Section tone="deep" id="faq">
         <Container className="max-w-3xl">
           <Reveal>
             <h2 className="text-4xl">
@@ -213,7 +214,7 @@ export default function PrevidenciarioPage() {
       </Section>
 
       {/* CTA FINAL */}
-      <Section tone="deep" pad="lg">
+      <Section tone="navy" pad="lg">
         <Container className="flex flex-col items-center text-center">
           <Reveal>
             <h2 className="max-w-2xl text-4xl md:text-5xl">
