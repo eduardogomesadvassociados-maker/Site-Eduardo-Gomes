@@ -181,7 +181,7 @@ export default function PrevidenciarioPage() {
       />
 
       {/* COMO FUNCIONA */}
-      <Section tone="deep" id="atendimento">
+      <Section tone="marfim" id="atendimento">
         <Container>
           <Reveal>
             <h2 className="text-4xl">
