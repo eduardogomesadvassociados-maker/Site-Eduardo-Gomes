@@ -9,7 +9,7 @@ const STEPS = [
   {
     n: "02",
     title: "Análise do caso",
-    text: "Consideramos documentos, histórico e demais informações relevantes para compreender a situação.",
+    text: "Consideramos os documentos, o histórico e demais informações relevantes para compreender a situação.",
   },
   {
     n: "03",

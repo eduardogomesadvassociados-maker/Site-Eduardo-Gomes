@@ -46,7 +46,12 @@ export function Reveal({
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
     observer.observe(node);
-    return () => observer.disconnect();
+    // Rede de segurança: se o observer não disparar, revela mesmo assim.
+    const safety = window.setTimeout(() => setState("in"), 2500);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(safety);
+    };
   }, []);
 
   const cls =
