@@ -16,11 +16,11 @@ function Stars({ rating }: { rating: number }) {
 }
 
 /** Depoimentos do Google Meu Negócio. Não renderiza nada se ainda não há dados. */
-export function Testimonials() {
+export function Testimonials({ tone = "deep" }: { tone?: "navy" | "deep" }) {
   if (TESTIMONIALS.length === 0) return null;
 
   return (
-    <Section tone="navy">
+    <Section tone={tone}>
       <Container>
         <Reveal>
           <h2 className="text-4xl">
