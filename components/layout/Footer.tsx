@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Container } from "@/components/ui/Section";
+import { Logo } from "./Logo";
 import {
   WhatsAppIcon,
   InstagramIcon,
@@ -9,7 +9,6 @@ import {
   Phone,
 } from "@/components/icons";
 import { CONTACT, FIRM } from "@/lib/site";
-import lockup from "@/public/brand/logo-lockup-ouro.png";
 
 const areas = [
   { label: "Direito Previdenciário", href: "/previdenciario" },
@@ -27,13 +26,7 @@ export function Footer() {
     <footer className="border-t border-border bg-bg-1">
       <Container className="grid grid-cols-2 gap-x-8 gap-y-12 py-16 md:grid-cols-4 md:py-20">
         <div className="col-span-2 space-y-5 md:col-span-1">
-          <Image
-            src={lockup}
-            alt={FIRM.shortName}
-            width={180}
-            height={112}
-            className="h-auto w-36"
-          />
+          <Logo size="md" />
           <p className="max-w-xs font-sans text-sm leading-relaxed text-text-2">
             Advocacia especializada em Direito Previdenciário e Trabalhista, com
             mais de {FIRM.experienceYears} anos de atuação.
