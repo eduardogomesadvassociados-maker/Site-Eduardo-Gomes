@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
+import { Analytics } from "@/components/analytics/Analytics";
+import { RouteChangeTracker } from "@/components/analytics/RouteChangeTracker";
 import { SITE_URL, SITE_INDEXABLE, FIRM } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
@@ -70,7 +73,13 @@ export default function RootLayout({
       data-theme="dark"
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="flex min-h-screen flex-col">{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <Analytics />
+        <Suspense fallback={null}>
+          <RouteChangeTracker />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

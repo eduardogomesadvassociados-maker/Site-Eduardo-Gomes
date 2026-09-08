@@ -65,6 +65,12 @@ export const CONTACT = {
   instagramHandle: "@eduardogomesadvogado",
 } as const;
 
+/** Tags de marketing. IDs públicos (aparecem no fonte da página). */
+export const ANALYTICS = {
+  gtmId: "GTM-MMNJSQFZ",
+  metaPixelId: "1082299774351088",
+} as const;
+
 /** Texto padrão dos CTAs do site — todos abrem o WhatsApp do escritório. */
 export const CTA_LABEL = "Falar com um advogado";
 
