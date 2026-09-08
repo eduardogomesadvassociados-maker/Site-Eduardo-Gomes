@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Section";
-import { WhatsAppIcon, InstagramIcon, MapPin, Clock } from "@/components/icons";
+import {
+  WhatsAppIcon,
+  InstagramIcon,
+  MapPin,
+  Clock,
+  Phone,
+} from "@/components/icons";
 import { CONTACT, FIRM } from "@/lib/site";
 import lockup from "@/public/brand/logo-lockup-ouro.png";
 
@@ -82,7 +88,14 @@ export function Footer() {
             className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent hover:text-accent-strong"
           >
             <WhatsAppIcon width={16} height={16} />
-            {CONTACT.phoneDisplay}
+            {CONTACT.whatsappDisplay} · WhatsApp
+          </a>
+          <a
+            href={CONTACT.phoneTel}
+            className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent hover:text-accent-strong"
+          >
+            <Phone width={16} height={16} />
+            {CONTACT.phoneDisplay} · ligação
           </a>
           <a
             href={CONTACT.instagram}

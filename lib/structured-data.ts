@@ -16,7 +16,21 @@ export function legalServiceSchema(): Record<string, unknown> {
     description:
       "Escritório de advocacia especializado em Direito Previdenciário e Direito Trabalhista, com mais de 18 anos de atuação.",
     foundingDate: String(FIRM.since),
-    telephone: CONTACT.phoneE164,
+    telephone: `+${CONTACT.whatsappNumber}`,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: `+${CONTACT.whatsappNumber}`,
+        contactType: "atendimento",
+        availableLanguage: "Portuguese",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: CONTACT.phoneE164,
+        contactType: "atendimento",
+        availableLanguage: "Portuguese",
+      },
+    ],
     priceRange: "$$",
     areaServed: FIRM.areasServed.map((name) => ({ "@type": "AdministrativeArea", name })),
     knowsAbout: [

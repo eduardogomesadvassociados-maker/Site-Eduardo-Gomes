@@ -54,9 +54,13 @@ export const STATS = {
 } as const;
 
 export const CONTACT = {
-  whatsappNumber: "552126674120",
-  whatsappUrl: "https://wa.me/552126674120",
+  /** WhatsApp (celular) — contato principal, usado em todos os botões. */
+  whatsappNumber: "5521964974901",
+  whatsappUrl: "https://wa.me/5521964974901",
+  whatsappDisplay: "(21) 96497-4901",
+  /** Telefone fixo — apenas para ligação. */
   phoneDisplay: "(21) 2667-4120",
+  phoneTel: "tel:+552126674120",
   phoneE164: "+552126674120",
   instagram: "https://www.instagram.com/eduardogomesadvogado/",
   instagramHandle: "@eduardogomesadvogado",

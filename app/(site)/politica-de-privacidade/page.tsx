@@ -38,7 +38,7 @@ export default function PoliticaPage() {
                 Este site é mantido pelo {FIRM.legalName}, com sede em{" "}
                 {FIRM.city}/{FIRM.state}. Para tratar de assuntos relacionados a
                 privacidade e proteção de dados, entre em contato pelo WhatsApp{" "}
-                {CONTACT.phoneDisplay}.
+                {CONTACT.whatsappDisplay}.
               </p>
             </section>
 

@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { Section, Container } from "@/components/ui/Section";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
-import { WhatsAppIcon, InstagramIcon, MapPin, Clock } from "@/components/icons";
+import {
+  WhatsAppIcon,
+  InstagramIcon,
+  MapPin,
+  Clock,
+  Phone,
+} from "@/components/icons";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import { CONTACT, FIRM } from "@/lib/site";
@@ -18,16 +24,30 @@ const items = [
   {
     icon: WhatsAppIcon,
     label: "WhatsApp",
-    value: CONTACT.phoneDisplay,
+    value: CONTACT.whatsappDisplay,
     href: CONTACT.whatsappUrl,
+    external: true,
+  },
+  {
+    icon: Phone,
+    label: "Telefone (ligação)",
+    value: CONTACT.phoneDisplay,
+    href: CONTACT.phoneTel,
   },
   {
     icon: InstagramIcon,
     label: "Instagram",
     value: CONTACT.instagramHandle,
     href: CONTACT.instagram,
+    external: true,
   },
-  { icon: MapPin, label: "Sede", value: `${FIRM.city}/${FIRM.state}` },
+  {
+    icon: MapPin,
+    label: "Sede",
+    value: `${FIRM.address.street} — ${FIRM.address.district}, ${FIRM.city}/${FIRM.state}`,
+    href: FIRM.address.mapsUrl,
+    external: true,
+  },
   { icon: Clock, label: "Horário", value: FIRM.hours },
 ];
 
@@ -51,7 +71,7 @@ export default function ContatoPage() {
       <Section tone="deep">
         <Container className="max-w-3xl">
           <div className="grid gap-px overflow-hidden rounded-[var(--radius-l)] border border-border bg-border sm:grid-cols-2">
-            {items.map(({ icon: Icon, label, value, href }, i) => {
+            {items.map(({ icon: Icon, label, value, href, external }, i) => {
               const inner = (
                 <>
                   <Icon width={20} height={20} className="text-accent" />
@@ -64,12 +84,13 @@ export default function ContatoPage() {
                 </>
               );
               return (
-                <Reveal key={label} delayMs={i * 70} className="bg-bg-2 p-7">
+                <Reveal key={label} delayMs={i * 60} className="bg-bg-2 p-7">
                   {href ? (
                     <a
                       href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...(external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="block transition-colors hover:text-accent"
                     >
                       {inner}
