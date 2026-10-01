@@ -11,7 +11,7 @@ import {
 } from "@/components/icons";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
-import { CONTACT, FIRM } from "@/lib/site";
+import { CONTACT, FIRM, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contato",
@@ -25,7 +25,7 @@ const items = [
     icon: WhatsAppIcon,
     label: "WhatsApp",
     value: CONTACT.whatsappDisplay,
-    href: CONTACT.whatsappUrl,
+    href: whatsappLink(),
     external: true,
   },
   {

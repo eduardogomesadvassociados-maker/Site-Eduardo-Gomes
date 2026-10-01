@@ -111,6 +111,7 @@ export default function PrevidenciarioPage() {
       />
 
       <PageHero
+        topic="previdenciario"
         eyebrow="Direito Previdenciário"
         title={
           <>
@@ -148,7 +149,7 @@ export default function PrevidenciarioPage() {
             <SituationsGrid items={situations} />
           </div>
           <div className="mt-10">
-            <WhatsAppCta />
+            <WhatsAppCta topic="previdenciario" />
           </div>
         </Container>
       </Section>
@@ -170,6 +171,7 @@ export default function PrevidenciarioPage() {
 
       {/* ENTENDA SUA SITUAÇÃO */}
       <ArgumentBlock
+        topic="previdenciario"
         tone="navy"
         eyebrow="Entenda sua situação previdenciária"
         title="Cada histórico de contribuição pode levar a uma análise"
@@ -192,7 +194,7 @@ export default function PrevidenciarioPage() {
             <AtendimentoSteps />
           </div>
           <div className="mt-10">
-            <WhatsAppCta />
+            <WhatsAppCta topic="previdenciario" />
           </div>
         </Container>
       </Section>
@@ -222,7 +224,7 @@ export default function PrevidenciarioPage() {
               <span className="accent-word">caso</span>
             </h2>
             <div className="mt-8">
-              <WhatsAppCta />
+              <WhatsAppCta topic="previdenciario" />
             </div>
           </Reveal>
         </Container>

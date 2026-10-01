@@ -1,6 +1,7 @@
 import { Section, Container } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
+import type { WhatsAppTopic } from "@/lib/site";
 
 export function ArgumentBlock({
   eyebrow,
@@ -9,6 +10,7 @@ export function ArgumentBlock({
   paragraphs,
   tone = "navy",
   cta = true,
+  topic,
   id,
 }: {
   eyebrow?: string;
@@ -17,6 +19,7 @@ export function ArgumentBlock({
   paragraphs: string[];
   tone?: "navy" | "deep";
   cta?: boolean;
+  topic?: WhatsAppTopic;
   id?: string;
 }) {
   return (
@@ -40,7 +43,7 @@ export function ArgumentBlock({
           ))}
           {cta ? (
             <div className="mt-8">
-              <WhatsAppCta />
+              <WhatsAppCta topic={topic} />
             </div>
           ) : null}
         </Reveal>

@@ -1,11 +1,11 @@
 import { WhatsAppIcon } from "@/components/icons";
-import { CONTACT } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
 
 /** Botão flutuante persistente de WhatsApp (mobile e desktop). */
 export function WhatsAppFloat() {
   return (
     <a
-      href={CONTACT.whatsappUrl}
+      href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com um advogado no WhatsApp"

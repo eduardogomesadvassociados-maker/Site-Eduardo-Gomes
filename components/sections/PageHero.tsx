@@ -1,6 +1,7 @@
 import { Section, Container } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
+import type { WhatsAppTopic } from "@/lib/site";
 import type { ReactNode } from "react";
 
 export function PageHero({
@@ -9,6 +10,7 @@ export function PageHero({
   accentWord,
   intro,
   tag,
+  topic,
   children,
 }: {
   eyebrow: string;
@@ -17,6 +19,7 @@ export function PageHero({
   accentWord?: string;
   intro?: ReactNode;
   tag?: string;
+  topic?: WhatsAppTopic;
   children?: ReactNode;
 }) {
   return (
@@ -49,7 +52,7 @@ export function PageHero({
         ) : null}
         <Reveal delayMs={180}>
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <WhatsAppCta />
+            <WhatsAppCta topic={topic} />
             {tag ? (
               <span className="rounded-full border border-accent/35 px-3.5 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-accent">
                 {tag}

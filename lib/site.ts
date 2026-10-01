@@ -71,6 +71,23 @@ export const ANALYTICS = {
   metaPixelId: "1082299774351088",
 } as const;
 
+/** Mensagens pré-preenchidas do WhatsApp, por contexto da página. */
+export const WHATSAPP_MESSAGES = {
+  geral:
+    "Olá! Vim pelo site do Eduardo Gomes Advogados e gostaria de mais informações e orientação sobre o meu caso.",
+  previdenciario:
+    "Olá! Vim pelo site do Eduardo Gomes Advogados e gostaria de saber mais sobre meus direitos e benefícios previdenciários.",
+  trabalhista:
+    "Olá! Vim pelo site do Eduardo Gomes Advogados e preciso de orientação sobre uma situação relacionada ao meu trabalho.",
+} as const;
+
+export type WhatsAppTopic = keyof typeof WHATSAPP_MESSAGES;
+
+/** Link do WhatsApp com a mensagem pré-preenchida do contexto. */
+export function whatsappLink(topic: WhatsAppTopic = "geral"): string {
+  return `${CONTACT.whatsappUrl}?text=${encodeURIComponent(WHATSAPP_MESSAGES[topic])}`;
+}
+
 /** Texto padrão dos CTAs do site — todos abrem o WhatsApp do escritório. */
 export const CTA_LABEL = "Falar com um advogado";
 

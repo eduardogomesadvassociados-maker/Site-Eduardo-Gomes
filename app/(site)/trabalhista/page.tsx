@@ -75,6 +75,7 @@ export default function TrabalhistaPage() {
       />
 
       <PageHero
+        topic="trabalhista"
         eyebrow="Direito Trabalhista"
         title={
           <>
@@ -104,7 +105,7 @@ export default function TrabalhistaPage() {
             <SituationsGrid items={situations} />
           </div>
           <div className="mt-10">
-            <WhatsAppCta />
+            <WhatsAppCta topic="trabalhista" />
           </div>
         </Container>
       </Section>
@@ -136,13 +137,14 @@ export default function TrabalhistaPage() {
             <AtendimentoSteps />
           </div>
           <div className="mt-10">
-            <WhatsAppCta />
+            <WhatsAppCta topic="trabalhista" />
           </div>
         </Container>
       </Section>
 
       {/* POR QUE BUSCAR ORIENTAÇÃO ANTES DE DECIDIR */}
       <ArgumentBlock
+        topic="trabalhista"
         tone="deep"
         eyebrow="Por que buscar orientação antes de tomar uma decisão?"
         title="Uma decisão tomada sem informação pode ter"
@@ -164,7 +166,7 @@ export default function TrabalhistaPage() {
               <span className="accent-word">orientação</span>
             </h2>
             <div className="mt-8">
-              <WhatsAppCta />
+              <WhatsAppCta topic="trabalhista" />
             </div>
           </Reveal>
         </Container>

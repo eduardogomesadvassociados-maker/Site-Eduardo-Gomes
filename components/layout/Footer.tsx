@@ -8,7 +8,7 @@ import {
   Clock,
   Phone,
 } from "@/components/icons";
-import { CONTACT, FIRM } from "@/lib/site";
+import { CONTACT, FIRM, whatsappLink } from "@/lib/site";
 
 const areas = [
   { label: "Direito Previdenciário", href: "/previdenciario" },
@@ -33,7 +33,7 @@ export function Footer() {
           </p>
           <div className="flex gap-2.5">
             <a
-              href={CONTACT.whatsappUrl}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp do escritório"
@@ -75,7 +75,7 @@ export function Footer() {
             {FIRM.hours}
           </p>
           <a
-            href={CONTACT.whatsappUrl}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent hover:text-accent-strong"
